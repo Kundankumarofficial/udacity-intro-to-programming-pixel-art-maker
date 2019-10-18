@@ -45,6 +45,11 @@ function makeGrid(h, w) {
         var color = colorElement.value;
         var click = event.target.id;
         var elem = document.getElementById(click);
-        elem.style.backgroundColor = color;
+        var attrib = elem.hasAttribute("style");
+        if (attrib === true) {
+            elem.removeAttribute("style");
+        } else {
+            elem.style.backgroundColor = color;
+        }
     })
 }
